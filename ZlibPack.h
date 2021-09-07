@@ -6,8 +6,8 @@
  * @version v1.0.0
  **/
 
-#ifndef TESTZLIB_ZLIBPACK_H
-#define TESTZLIB_ZLIBPACK_H
+#ifndef ZLIBPACK_ZLIBPACK_H
+#define ZLIBPACK_ZLIBPACK_H
 
 #include <zconf.h>
 
@@ -81,4 +81,4 @@ public:
 };
 
 
-#endif //TESTZLIB_ZLIBPACK_H
+#endif //ZLIBPACK_ZLIBPACK_H
