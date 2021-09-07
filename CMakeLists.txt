@@ -7,4 +7,4 @@ set(CMAKE_CXX_STANDARD 17)
 link_libraries(z)
 aux_source_directory(. SRC_LIST)        #搜索当前目录下的所有.cpp文件
 
-add_executable(TestZlib ${SRC_LIST})
+add_executable(ZlibPack ${SRC_LIST})

@@ -54,7 +54,6 @@ public:
      */
     bool Compress(std::string &sprev, std::string &snext);
 
-
     /**
      * @brief 解压
      *
@@ -77,7 +76,6 @@ public:
      *   @retval false: 解压失败
      */
     bool DeCompress(std::string &sprev, std::string &snext);
-
 };
 
 
