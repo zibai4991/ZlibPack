@@ -1,0 +1,5 @@
+# 过滤编译文件夹
+cmake-build-debug/
+
+# 过滤开发工具文件夹
+.idea/
