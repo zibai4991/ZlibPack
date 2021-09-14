@@ -87,3 +87,32 @@ bool ZlibPack::DeCompress(std::string &sprev, std::string &snext) {
     snext = std::string(ubuf);
     return true;
 }
+
+std::string ZlibPack::BufToHexString(char *buf, unsigned int len) {
+    std::string sRet = "";
+    std::string spat = "0123456789abcdef";
+    for (int i = 0; i < len; ++i) {
+        int itmp;
+        itmp = 0x0f & (buf[i] >> 4);
+        sRet.append(1, spat.at(itmp));
+        itmp = 0x0f & buf[i];
+        sRet.append(1, spat.at(itmp));
+    }
+    return sRet;
+}
+
+char *ZlibPack::HexStringtoBuf(std::string &str) {
+    int len = str.length();
+    char *buf = new char[len / 2];
+    for (int i = 0; i < len; i += 2) {
+        buf[i / 2] = char((HexCharToInt(str.at(i)) << 4) | HexCharToInt(str.at(i + 1)));
+    }
+    return buf;
+}
+
+int ZlibPack::HexCharToInt(char ch) {
+    if (ch >= '0' && ch <= '9') return (ch - '0');
+    if (ch >= 'A' && ch <= 'F') return (ch - 'A' + 10);
+    if (ch >= 'a' && ch <= 'f') return (ch - 'a' + 10);
+    return 0;
+}

@@ -76,6 +76,32 @@ public:
      *   @retval false: 解压失败
      */
     bool DeCompress(std::string &sprev, std::string &snext);
+
+    /**
+     * @brief  字节流转十六进制字符串
+     *
+     * @param buf ：字节指针
+     * @param len ：字节长度
+     * @return 返回转换后的字符串
+     */
+    std::string BufToHexString(char *buf, unsigned int len);
+
+    /**
+     * @brief  十六进制字符串转字节流
+     *
+     * @param str ：十六进制字符串
+     * @return  返回字节流
+     */
+    char* HexStringtoBuf(std::string& str);
+
+private:
+    /**
+     * @brief  十六进制字节转整数
+     *
+     * @param ch：十六进制字节
+     * @return  返回数值
+     */
+    int HexCharToInt(char ch);
 };
 
 
